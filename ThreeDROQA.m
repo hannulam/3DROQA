@@ -1,4 +1,4 @@
-% "Subcellular visualization and quantification by X-ray tube source µCT"
+% "Subcellular visualization and quantification by X-ray tube source ÂµCT"
 
 % 3DROQA MATLAB algorithm for in silico particle transformations, hyperpoloid
 % rejection and tabulating data for statistics.
@@ -25,7 +25,7 @@
 
 
 % Call this function in Command Window to start the process:
-function ThreeDROQA_GH(segmented, grayscale, voxel_size, result_data, accepted, lower_limit, upper_limit)
+function ThreeDROQA(segmented, grayscale, voxel_size, result_data, accepted, lower_limit, upper_limit)
 
 % Add iso2mesh to MATLAB path. 
 p = [fileparts(which(mfilename('fullpath'))) filesep 'iso2mesh'];
