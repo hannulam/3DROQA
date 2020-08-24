@@ -1,14 +1,28 @@
-# ThreeDROQA
- 
-The software package includes three outside libraries/functions. 
 
-iso2mesh by Qianqian Fang, iso2mesh has GPL v2 license. 
+
+# ThreeDROQA
+
+Introduction
+
+The MATLAB code is part of the 3D-Round-Object-Quantification Algorithm (3DROQA or ThreeDROQA). The code can be used to calculate and tabulate the spatial and intensity values for round objects segmented from 3D-image data. The code takes 3D intensity and segmented binary data as inputs and transforms the found voxel particles into ellipsoids via intermediate polygon particles. Using the particles, the code calculates various measures for each subject entity, including shape, dimensional, and intensity values. The code also monitors the data quality by excluding hyperboloids (an indication of proximate under-segmented particles) and calculating ellipsoid-to-voxels volume ratios (extreme ratios far from 1 indicate issues in the particle quality or transformation process). The tabulated values can then be used for making statistical tests. For more information, the 3DROQA was published as a part of Tamminen I. et al. Communications biology (2020).
+
+
+How to use
+
+[Tähän voisi lyhyesti kirjoittaa, miten koodi käytännössä otetaan käyttöön, miten sille annetaan data, ja miten data tulee pihalle]
+
+
+Other matter
+
+The software package includes three outside libraries/functions listed below: 
+
+iso2mesh by Qianqian Fang. 
 
 ellipsoid_fit_new by Yury Petrov.
 
 stlVolume by Krishnan Suresh.
 
-ellipsoid_fit_new and stlVolume have the following license. 
+The iso2mesh was published under GPL v2 license. The ellipsoid_fit_new and stlVolume have the following license: 
 
 All rights reserved.
 
