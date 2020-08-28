@@ -9,7 +9,14 @@ The MATLAB code is part of the 3D-Round-Object-Quantification Algorithm (3DROQA 
 
 How to use
 
-[Tähän voisi lyhyesti kirjoittaa, miten koodi käytännössä otetaan käyttöön, miten sille annetaan data, ja miten data tulee pihalle]
+ThreeDROQA function can be run with any particle data. Particles should not touch data borders, so border_kill function should be run before ThreeDROQA. 
+Test data can be found in the Test_sets folder. There are raw and mat files. Raw files can be read to Matlab with provided read_raw function. Mat files can be directly used. The function call is as follows.
+ThreeDROQA(segmented data, grayscale data, voxel size, result data,  accepted, lower limit, upper limit);
+Function parameters are described more detailed in the code. Segmented data is 8-bit segmented data. Grayscale data is 16-bit original grayscale data. Result data, accepted, lower and upper limits affect the saved result particles, not the excel file. 
+Matlab data can be tested with the command: 
+ThreeDROQA(segmented_matlab, grayscale_matlab, 1.10114, 0, 0, 0.8, 1.2);
+ThreeDROQA function outputs excel file that contains the following information: 
+Particle number, Volume of voxel particle, Surface area of polygon particle, Mean intensity of voxel particle, Axel lengths (radii) of ellipsoid (max, medium, min), Flatness, Elongation, Anisotrophy, Sphericity, Volume of ellipsoid, Ellipsoid-to-voxels volume ratio.
 
 
 Other matter
