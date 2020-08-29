@@ -4,19 +4,24 @@
 
 Introduction
 
-The MATLAB code is part of the 3D-Round-Object-Quantification Algorithm (3DROQA or ThreeDROQA). The code can be used to calculate and tabulate spatial and intensity measurements for round objects segmented from 3D-image data. The code takes 3D intensity and segmented binary data as inputs and transforms the found voxel particles into ellipsoids via intermediate polygon particles. Using the particles, the code calculates various measures for each subject entity, including shape, dimensional, and intensity values. The code also monitors the data quality by excluding hyperboloids (an indication of proximate under-segmented particles) and calculating ellipsoid-to-voxels volume ratios (extreme ratios far from 1 indicate issues in the particle quality or transformation process). The tabulated values can then be used for making statistical tests. For more information, the 3DROQA was published as a part of Tamminen I. et al. Communications biology (2020).
+This MATLAB code (ThreeDROQA function) is part of the 3D-Round-Object-Quantification Algorithm (3DROQA). The code can be used to calculate and tabulate spatial and intensity measurements for round objects segmented from 3D-image data. The code takes 3D intensity and segmented binary data as inputs and transforms the found voxel particles into ellipsoids via intermediate polygon particles. Using the particles, the code calculates various measures for each subject entity, including shape, dimensional, and intensity values. The code also monitors the data quality by excluding hyperboloids (an indication of proximate under-segmented particles) and calculating ellipsoid-to-voxels volume ratios (extreme ratios far from 1 indicate issues in the particle quality or transformation process). The tabulated values can then be used for making statistical tests. For more information, the 3DROQA was published as a part of Tamminen I. et al. Communications biology (2020).
 
 
 How to use
 
 ThreeDROQA function can be run with any particle data. Particles should not touch data borders, so border_kill function should be run before ThreeDROQA. 
-Test data can be found in the Test_sets folder. There are raw and mat files. Raw files can be read to Matlab with provided read_raw function. Mat files can be directly used. The function call is as follows.
+3D test data can be found in the Test_sets folder. There are raw and mat files. Raw files can be read to Matlab with provided read_raw function. Mat files can be directly used. The function call is as follows:
+
 ThreeDROQA(segmented data, grayscale data, voxel size, result data,  accepted, lower limit, upper limit);
-Function parameters are described more detailed in the code. Segmented data is 8-bit segmented data. Grayscale data is 16-bit original grayscale data. Result data, accepted, lower and upper limits affect the saved result particles, not the excel file. 
-Matlab data can be tested with the command: 
+
+Function parameters are described more detailed in the code. Segmented data is 8-bit segmented data. Grayscale data is 16-bit original grayscale data. Result data, accepted, lower and upper limits affect the saved result particles, not the Excel file. 
+
+To run a test with the provided 3D data in .mat format, execute the following command: 
+
 ThreeDROQA(segmented_matlab, grayscale_matlab, 1.10114, 0, 0, 0.8, 1.2);
-ThreeDROQA function outputs excel file that contains the following information: 
-Particle number, Volume of voxel particle, Surface area of polygon particle, Mean intensity of voxel particle, Axel lengths (radii) of ellipsoid (max, medium, min), Flatness, Elongation, Anisotrophy, Sphericity, Volume of ellipsoid, Ellipsoid-to-voxels volume ratio.
+
+After processing the data, ThreeDROQA function outputs an Excel file that contains the following information: 
+Particle number, Volume of voxel particle, Surface area of polygon particle, Mean intensity of voxel particle, Axel lengths (radii) of ellipsoid (max, medium, min), Flatness, Elongation, Anisotropy, Sphericity, Volume of ellipsoid, Ellipsoid-to-voxels volume ratio.
 
 
 Other matter
