@@ -23,6 +23,10 @@ ThreeDROQA(segmented_matlab, grayscale_matlab, 1.10114, 0, 0, 0.8, 1.2);
 After processing the data, ThreeDROQA function outputs an Excel file that contains the following information: 
 Particle number, Volume of voxel particle, Surface area of polygon particle, Mean intensity of voxel particle, Axel lengths (radii) of ellipsoid (max, medium, min), Flatness, Elongation, Anisotropy, Sphericity, Volume of ellipsoid, Ellipsoid-to-voxels volume ratio.
 
+Preview on the provided 3D test data:
+
+![](Test_sets/3DTestPreview.png)
+
 
 Other matter
 
